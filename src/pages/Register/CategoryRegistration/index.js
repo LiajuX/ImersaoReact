@@ -7,7 +7,7 @@ import Button from '../../../components/Button';
 
 function CategoryRegistration() {
   const initialValues = {
-    name: '',
+    title: '',
     description: '',
     color: '',
   };
@@ -90,7 +90,7 @@ function CategoryRegistration() {
       <ul>
         {categories.map((category) => (
           <li key={category.name}>
-            {category.name}
+            {category.title}
             {category.description}
             {category.color}
           </li>
