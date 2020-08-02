@@ -42,10 +42,9 @@ function CategoryRegistration() {
   }
 
   useEffect(() => {
-    console.log('oi');
-    const url = 'http://localhost:8080/categories';
+    const URL = window.location.href.includes('localhost') ? 'http://localhost:8080/categories' : 'https://aluraflix-liajux.herokuapp.com/categories';
 
-    fetch(url)
+    fetch(URL)
       .then(async (serverAnswer) => {
         const answer = await serverAnswer.json();
         setCategories([
