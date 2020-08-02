@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react';
 import { VideoCardGroupContainer, Title, ExtraLink } from './styles';
 import VideoCard from './components/VideoCard';

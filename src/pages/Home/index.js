@@ -1,6 +1,5 @@
 import React from 'react';
 
-import DefaultPage from '../../components/DefaultPage';
 import MainBanner from '../../components/MainBanner';
 import Carousel from '../../components/Carousel';
 
