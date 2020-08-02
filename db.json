@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Nova",
+      "description": "Categoria nova",
+      "color": "#FFF"
+    },
+    {
+        "id": 2,
+        "name": "Nova2",
+        "description": "Categoria nova2",
+        "color": "#123"
+    }
+  ]
+}
