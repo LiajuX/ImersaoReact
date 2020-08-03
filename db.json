@@ -3,11 +3,7 @@
     {
       "id": 1,
       "title": "Front End",
-      "color": "#6BD1FF",
-      "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
+      "color": "#6BD1FF"
     },
     {
       "id": 2,
