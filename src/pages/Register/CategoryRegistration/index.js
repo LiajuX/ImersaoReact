@@ -5,6 +5,8 @@ import DefaultPage from '../../../components/DefaultPage';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 
+import useForm from '../../../hooks/useForm';
+
 function CategoryRegistration() {
   const initialValues = {
     title: '',
@@ -12,17 +14,10 @@ function CategoryRegistration() {
     color: '',
   };
 
+  const { handleInputChange, values, clearForm } = useForm(initialValues);
+
   // State to store the categories
   const [categories, setCategories] = useState([]);
-  // State of input values
-  const [values, setValues] = useState(initialValues);
-
-  function setValue(object, value) {
-    setValues({
-      ...values,
-      [object]: value, // name: 'value'
-    });
-  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -31,14 +26,7 @@ function CategoryRegistration() {
       values,
     ]);
 
-    setValues(initialValues);
-  }
-
-  function handleInputChange(event) {
-    setValue(
-      event.target.getAttribute('name'),
-      event.target.value,
-    );
+    clearForm(initialValues);
   }
 
   useEffect(() => {
@@ -46,10 +34,12 @@ function CategoryRegistration() {
 
     fetch(URL)
       .then(async (serverAnswer) => {
-        const answer = await serverAnswer.json();
-        setCategories([
-          ...answer,
-        ]);
+        if (serverAnswer.ok) {
+          const answer = await serverAnswer.json();
+          setCategories(answer);
+          return;
+        }
+        throw new Error('Não foi possível pegar os dados :(');
       });
   }, []);
 
@@ -64,8 +54,8 @@ function CategoryRegistration() {
         <FormField
           label="Nome da Categoria"
           type="text"
-          name="name"
-          value={values.name}
+          name="title"
+          value={values.title}
           onChange={handleInputChange}
         />
 
@@ -89,7 +79,7 @@ function CategoryRegistration() {
 
       <ul>
         {categories.map((category) => (
-          <li key={category.name}>
+          <li key={category.title}>
             {category.title}
             {category.description}
             {category.color}

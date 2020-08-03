@@ -3,7 +3,11 @@
     {
       "id": 1,
       "title": "Front End",
-      "color": "#6BD1FF"
+      "color": "#6BD1FF",
+      "link_extra": {
+        "text": "Formação de Front End na Alura",
+        "url": "https://www.alura.com.br/cursos-online-front-end"
+      }
     },
     {
       "id": 2,
@@ -26,19 +30,18 @@
       "color": "red"
     }
   ],
-
   "videos": [
     {
       "id": 1,
       "categoryId": 1,
-      "title": "SEO com React",
-      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+      "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
+      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
     },
     {
       "id": 2,
       "categoryId": 1,
-      "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+      "title": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
     },
     {
       "id": 3,
